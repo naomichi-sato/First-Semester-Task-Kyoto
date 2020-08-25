@@ -4,12 +4,13 @@
 // 制作課題 その１
 // ==============================
 
+
 /**
 ■説明
 	以下のプログラムは [ Hit And Blow ] というゲームをコーディングし、
 	実行を確認したうえで、その一部分を削除したものです。
 
-	削除した部分は　※※　と記載し、
+	削除した部分は　// ※※　と記載し、
 	本来入るべき処理の内容をコメントしてあります。
 
 	コメント内容や他のコードを読み解き、ゲームを完成させなさい。
@@ -42,15 +43,15 @@
 // ==============================
 // 定数定義
 // ==============================
-※※　DIGITSという名前の定数or定義で値は４	// 問題の桁数
+// ※※　DIGITSという名前の定数or定義で値は４	// 問題の桁数
 
 // ==============================
 // グローバル変数
 // ==============================
-※※　整数型の変数count					// 推測回数	
-※※　整数型の変数cursor					// 選択カーソル
-※※　整数型、配列の要素数DIGITSのtarget	// 目標数の保存配列
-※※　整数型、配列の要素数DIGITSのnum	// 推測数の保存配列
+// ※※　整数型の変数count					// 推測回数	
+// ※※　整数型の変数cursor					// 選択カーソル
+// ※※　整数型、配列の要素数DIGITSのtarget	// 目標数の保存配列
+// ※※　整数型、配列の要素数DIGITSのnum	// 推測数の保存配列
 
 // ==============================
 // 関数プロトタイプ宣言
@@ -83,19 +84,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// ローカル変数宣言
 	// ----------------------------------------------------
-	※※　整数型の変数hitを宣言し、0で初期化
-	※※　整数型の変数blowを宣言し、0で初期化
-	※※　bool型の変数gameClearを宣言し、falseで初期化(trueでゲームクリア)
+	// ※※　整数型の変数hitを宣言し、0で初期化
+	// ※※　整数型の変数blowを宣言し、0で初期化
+	// ※※　bool型の変数gameClearを宣言し、falseで初期化(trueでゲームクリア)
 
 	// 各種初期化処理
 	// ----------------------------------------------------
 	InputInit();			// 入力処理初期化関数の呼び出し
 	DrawInit();				// 描画処理初期化関数の呼び出し
-	※※　// 問題となる数字の作成
+	// ※※　// 問題となる数字の作成
 
-	※※　// countを０で初期化
-	※※　// cursorを０で初期化
-	※※　// 配列 num を for文 で初期化
+	// ※※　// countを０で初期化
+	// ※※　// cursorを０で初期化
+	// ※※　// 配列 num を for文 で初期化
 
 	// ゲームのメインループ
 	// 画面を１回表示する毎にwhile分を１回処理する
@@ -113,34 +114,34 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		// --- 入力状況をチェックして、適切な処理を行う
 		// ゲームクリアしていない時だけ入力を受け付けるように if文 でチェックする
-		if( ※※ )
+//		if( ※※ )
 		{
 			if(IsPushKey(MY_INPUT_UP))
 			{
-				※※	// num配列のcursor番目を 1 増やす
+//				※※	// num配列のcursor番目を 1 増やす
 					// 増やした結果、9 より大きくなった場合は、0にする
 			}
 			else if(IsPushKey(MY_INPUT_DOWN))
 			{
-				※※	// num配列のcursor番目を 1 減らす
+//				※※	// num配列のcursor番目を 1 減らす
 					// 減らした結果、0 より小さくなった場合は、9にする
 			}
 			else if(IsPushKey(MY_INPUT_LEFT))
 			{
-				※※	// cursorを 1 減らす
+//				※※	// cursorを 1 減らす
 					// 減らした結果、0 より小さくなった場合は、0にする
 			}
 			else if(IsPushKey(MY_INPUT_RIGHT))
 			{
-				※※	// cursorを 1 増やす
+//				※※	// cursorを 1 増やす
 						// 増やした結果、(DIGITS - 1) より大きくなった場合は、(DIGITS - 1)にする
 			}
 			else if(IsPushKey(MY_INPUT_ENTER))
 			{
 				// 入力した数字が有効か if文 でチェックする
-				if( ※※ )
+//				if( ※※ )
 				{
-					※※	// チェックした結果が true の時、以下の処理を行う
+//					※※	// チェックした結果が true の時、以下の処理を行う
 						// hit, blowの数をチェックし、その返り値を gameClear に代入
 						// 入力回数 count を 1増やす
 				}
@@ -150,12 +151,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		// 以下、描画処理
 		// ----------------------------------------------------
 		DrawInformation();
-		DrawHint( hit, blow, count );
-		DrawNum( num, DIGITS );
-		DrawCursor( cursor, IsValidNumber(), DIGITS );
+//		DrawHint( hit, blow, count );
+//		DrawNum( num, DIGITS );
+//		DrawCursor( cursor, IsValidNumber(), DIGITS );
 
 		// ゲームクリアしていれば、追加で描画
-		if( ※※ )
+//		if( ※※ )
 		{
 			DrawGameClear();
 		}
@@ -181,19 +182,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 // ==============================
 void CreateTargetNumber()
 {
-	※※		// 乱数をtime()関数で初期化
+//	※※		// 乱数をtime()関数で初期化
 
 	// 0 から DIGITS より小さい間繰り返す for文
 	// ループカウンタの変数名は i とする
-	for( ※※ )
+//	for( ※※ )
 	{
-		target[i] = 0;
+//		target[i] = 0;
 
-		bool isValid;
+		bool isValid = true;
 		do {
-			※※		// 現在の要素へ、乱数値を代入
+//			※※		// 現在の要素へ、乱数値を代入
 
-			※※
+//			※※
 			// 以下の処理を行う
 			// 同じ数字がないかをチェック
 			// 今回の数字が無効な値だったら isValid を false に
@@ -210,10 +211,10 @@ bool IsValidNumber()
 {
 	// 0 から DIGITS より小さい間繰り返す for文
 	// ループカウンタの変数名は i とする
-	for( ※※ )
+//	for( ※※ )
 	{
 		// i 番目の桁が無効だったら false を返す
-		if( ※※ )
+//		if( ※※ )
 		{
 			return false;
 		}
@@ -227,23 +228,23 @@ bool IsValidNumber()
 // ==============================
 bool IsValidDigit( int digit )
 {
-	if( digit < 0 || digit >= DIGITS )
+//	if( digit < 0 || digit >= DIGITS )
 	{
 		return false;
 	}
 
 	// 0 から DIGITS より小さい間繰り返す for文
 	// ループカウンタの変数名は i とする
-	for( ※※ )
+//	for( ※※ )
 	{
-		※※
+//		※※
 		// 以下の処理を行う
 		// digit と i が同じ場合は調べる必要がないので continue する
 		// num配列の digit 番目と i 番目を比較し、
 		// 同じだったら重複しているということなので false を返す
 	}
 
-	※※ // for文を抜けたら重複がないということなので true を返す
+//	※※ // for文を抜けたら重複がないということなので true を返す
 }
 
 // ==============================
@@ -252,24 +253,25 @@ bool IsValidDigit( int digit )
 // ==============================
 bool IsMatch(int* numHit, int* numBlow)
 {
-	※※
+//	※※
 	// numHit と numBlow が指すアドレスの中身を 0 で初期化する
 
-	for(int i = 0; i < DIGITS; i++)
+//	for(int i = 0; i < DIGITS; i++)
 	{
-		for(int j = 0; j < DIGITS; j++)
+//		for(int j = 0; j < DIGITS; j++)
 		{
-			※※
+//			※※
 			// target の i 番目、 num の j 番目が同じか調べる
-			if( ※※ )
+//			if( ※※ )
 			{
 				// 当てるべき数が num に入っていることが分かったので、Hit か Blow かを調べる
 
-				※※
+//				※※
 				// 配列の同じ位置にある場合は numHit のアドレスの中身を 1 増やす
 				// そうでない場合は numBlow のアドレスの中身を 1 増やす
 			}
 		}
 	}
-	return (*numHit == DIGITS);
+//	return (*numHit == DIGITS);
+	return false;
 }
